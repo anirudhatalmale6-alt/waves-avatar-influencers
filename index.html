@@ -72,13 +72,18 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 
 /* AVATAR GALLERY */
 .avatar-section{background:var(--light-grey)}
-.avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:48px}
+.filter-tabs{display:flex;justify-content:center;gap:8px;margin-top:32px;margin-bottom:8px;flex-wrap:wrap}
+.filter-tab{padding:10px 24px;border:1px solid var(--border);border-radius:100px;background:transparent;color:var(--grey);font-size:14px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s;letter-spacing:.3px}
+.filter-tab:hover{border-color:var(--black);color:var(--black)}
+.filter-tab.active{background:var(--black);color:var(--white);border-color:var(--black)}
+.avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:24px}
 .avatar-card{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;background:#e0e0e0;transition:transform .3s,box-shadow .3s}
 .avatar-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.15)}
 .avatar-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .avatar-card:hover img{transform:scale(1.05)}
 .avatar-card .avatar-name{position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:white;font-size:12px;font-weight:500;opacity:0;transition:opacity .3s}
 .avatar-card:hover .avatar-name{opacity:1}
+.avatar-card .avatar-niche{position:absolute;top:8px;left:8px;background:rgba(0,0,0,0.6);color:white;font-size:10px;font-weight:600;padding:3px 10px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;backdrop-filter:blur(4px)}
 .avatar-note{text-align:center;margin-top:32px;font-size:15px;color:var(--grey);font-weight:300}
 .avatar-note strong{font-weight:600;color:var(--black)}
 
@@ -162,6 +167,20 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 .faq-item.open .faq-a{max-height:300px;padding-bottom:24px}
 .faq-a p{font-size:15px;color:var(--grey);line-height:1.7;font-weight:300}
 
+/* COURSES */
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.course-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s;background:var(--white)}
+.course-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.course-img{width:100%;aspect-ratio:16/9;background:var(--black);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.course-img .course-icon{font-size:48px;opacity:.8}
+.course-img .course-tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.15);color:white;font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;backdrop-filter:blur(4px)}
+.course-body{padding:24px}
+.course-body h3{font-family:var(--serif);font-size:22px;letter-spacing:-0.5px;margin-bottom:8px;line-height:1.3}
+.course-body p{font-size:14px;color:var(--grey);line-height:1.6;font-weight:300;margin-bottom:20px}
+.course-meta{display:flex;gap:16px;font-size:13px;color:var(--grey);margin-bottom:20px;font-weight:400}
+.course-body .btn-primary{width:100%;text-align:center;padding:14px;font-size:14px}
+@media(max-width:768px){.courses-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}}
+
 /* FOOTER */
 .footer{background:var(--light-grey);padding:60px 24px;text-align:center}
 .footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:24px;flex-wrap:wrap}
@@ -189,6 +208,7 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
   .section{padding:72px 24px}
   .nav-logo{font-size:18px}
   .nav-cta{padding:10px 20px;font-size:13px}
+  .nav-link-desktop{display:none!important}
 }
 @media(max-width:480px){
   .avatar-grid{grid-template-columns:repeat(2,1fr)}
@@ -242,7 +262,12 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">Waves <span>Avatar</span></a>
-    <a href="#order" class="nav-cta">Order Now</a>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="#gallery" style="font-size:14px;color:var(--grey);text-decoration:none;font-weight:400;display:inline" class="nav-link-desktop">Avatars</a>
+      <a href="#pricing" style="font-size:14px;color:var(--grey);text-decoration:none;font-weight:400;display:inline" class="nav-link-desktop">Pricing</a>
+      <a href="#courses" style="font-size:14px;color:var(--grey);text-decoration:none;font-weight:400;display:inline" class="nav-link-desktop">Courses</a>
+      <a href="#order" class="nav-cta">Order Now</a>
+    </div>
   </div>
 </nav>
 
@@ -305,6 +330,12 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
       <p class="section-label">Browse avatars</p>
       <h2 class="section-title">Pick your presenter.</h2>
       <p class="section-subtitle">Click any avatar to preview. Then select it for your order.</p>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all" onclick="filterAvatars('all',this)">All</button>
+        <button class="filter-tab" data-filter="luxury" onclick="filterAvatars('luxury',this)">Luxury</button>
+        <button class="filter-tab" data-filter="professional" onclick="filterAvatars('professional',this)">Professional</button>
+        <button class="filter-tab" data-filter="casual" onclick="filterAvatars('casual',this)">Casual</button>
+      </div>
     </div>
     <div class="avatar-grid reveal" id="avatarGrid">
       <!-- Populated by JS -->
@@ -628,12 +659,69 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
   </div>
 </section>
 
+<!-- COURSES -->
+<section class="section" id="courses">
+  <div class="section-inner section-center reveal">
+    <p class="section-label">Learn &amp; grow</p>
+    <h2 class="section-title">Master AI Content Creation.</h2>
+    <p class="section-subtitle">From beginner to expert. Learn how to create stunning AI content that converts.</p>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          <span class="course-icon">&#127916;</span>
+          <span class="course-tag">Beginner</span>
+        </div>
+        <div class="course-body">
+          <h3>AI Avatar Videos for Beginners</h3>
+          <p>Learn how to create professional avatar videos from scratch. Scripting, emotion, backgrounds, and publishing.</p>
+          <div class="course-meta">
+            <span>6 lessons</span>
+            <span>45 min</span>
+          </div>
+          <a href="#order" class="btn-primary btn-outline">Coming Soon</a>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-img" style="background:linear-gradient(135deg,#0f0f0f,#2d2d2d)">
+          <span class="course-icon">&#129489;</span>
+          <span class="course-tag">Intermediate</span>
+        </div>
+        <div class="course-body">
+          <h3>Build Your AI Model Brand</h3>
+          <p>Create a consistent AI model persona and use it across campaigns. Same face, different scenarios, unlimited content.</p>
+          <div class="course-meta">
+            <span>8 lessons</span>
+            <span>1 hour</span>
+          </div>
+          <a href="#order" class="btn-primary btn-outline">Coming Soon</a>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-img" style="background:linear-gradient(135deg,#1a1a1a,#333)">
+          <span class="course-icon">&#128200;</span>
+          <span class="course-tag">Advanced</span>
+        </div>
+        <div class="course-body">
+          <h3>AI Content That Converts</h3>
+          <p>Proven scripts, hooks, and strategies to turn AI avatar videos into sales. TikTok, Reels, YouTube Shorts, and ads.</p>
+          <div class="course-meta">
+            <span>10 lessons</span>
+            <span>1.5 hours</span>
+          </div>
+          <a href="#order" class="btn-primary btn-outline">Coming Soon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-logo">Waves <span style="font-style:italic;opacity:.6">Avatar Influencers</span></div>
   <div class="footer-links">
     <a href="#gallery">Avatars</a>
     <a href="#pricing">Pricing</a>
+    <a href="#courses">Courses</a>
     <a href="#order">Order</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -657,48 +745,60 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 </div>
 
 <script>
-// Avatar data
+// Avatar data with niche categories
 const avatars = [
-  {id:"Candace_Beige_Dress_Front",name:"Candace",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/bb948a1bf0fb4f9b9b2039cf3ed2013d_34520/preview_target.webp"},
-  {id:"Adriana_BizTalk_Front_public",name:"Adriana",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/c3d1baaebbe84752b7a473373c6cd385_42780/preview_target.webp"},
-  {id:"Andrew_public_pro1_20230614",name:"Alex",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/ed0577c3046545018aade5e35fc6e491_2750/preview_target.webp"},
-  {id:"Annelise_public_2",name:"Annelise",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/89af02fefefc4699bae12331bd047373_58430/preview_target.webp"},
-  {id:"Armando_Casual_Front_public",name:"Armando",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/fa717f667b7b4e41b0d7e4fd320ab080_43280/preview_talk_1.webp"},
-  {id:"Annie_expressive11_public",name:"Annie",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/561ec5deb3f74a27b6b12fd8a6a2f76e_56970/preview_target.webp"},
-  {id:"Carlotta_BizTalk_Front_public",name:"Carlotta",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/de842dc5e72d46e19769f266d6592cec_46200/preview_target.webp"},
-  {id:"Aditya_public_4",name:"Aditya",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/17ad4b824e5a47e8b4f61e6a9cd346e7_62180/preview_target.webp"},
-  {id:"Annelore_public_2",name:"Annelore",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/c1d815d3f43246b9bd78f20bd06ba61c_60700/preview_target.webp"},
-  {id:"Bahar_Business_Front_public",name:"Bahar",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/94b3783586ad4a5bad570b07e81613a4_42880/preview_talk_1.webp"},
-  {id:"Adrian_public_3_20240312",name:"Adrian",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/696e5afe51ee4794aa232753fa703fea_14947/preview_talk_2.webp"},
-  {id:"Connie_Business_Front_public",name:"Connie",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/e9410c73299a4e9ead25f48a96ca7851_46270/preview_talk_2.webp"},
-  {id:"Briana_public_2_20240110",name:"Briana",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/e50a097f50b541749c318dfedfe9c640_13311/preview_talk_1.webp"},
-  {id:"August_Casual_Front2_public",name:"August",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/7ee4b62fcfd2497592d0f7f564bad649_42700/preview_talk_1.webp"},
-  {id:"Caroline_Business_Sitting_Front_public",name:"Caroline",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/75e4f326918c45028fe06bc9dc0c45da_56520/preview_talk_2.webp"},
-  {id:"Aubrey_standing_night_scene_front",name:"Aubrey",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/33fda333525e41b4bbff63fe17169507_39530/preview_target.webp"},
-  {id:"Bradley_Blue_Polo_Front",name:"Bradley",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/c422d0fd8a0645458a084b68e3223a5b_34490/preview_talk_1.webp"},
-  {id:"Chloe_standing_lounge_front",name:"Chloe",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/874b8f9546d34bb49a7f536c8efaabdd_38950/preview_talk_2.webp"},
-  {id:"Albert_public_3",name:"Albert",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/db0a30cd42d640a6b24e693c94c6aac3_62570/preview_target.webp"},
-  {id:"Anja_standing_office_front",name:"Anja",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/f66130157ead439eb05bcf63b0469163_37110/preview_target.webp"},
-  {id:"Ann_Business_Front_public",name:"Ann",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51161fccd84d4c71b686cfe67c34f1b6_48010/preview_target.webp"},
-  {id:"Blanka_sitting_lounge_front",name:"Blanka",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51d99b18bdec4ad39b58ca10b9973473_38510/preview_target.webp"},
-  {id:"Bastien_public_3",name:"Bastien",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/b82423e99e994597980e86cd5cb1acf2_61190/preview_target.webp"},
-  {id:"upload",name:"Use Your Own Photo",gender:"Upload",img:""}
+  {id:"Candace_Beige_Dress_Front",name:"Candace",gender:"Female",niche:"luxury",img:"https://files2.heygen.ai/avatar/v3/bb948a1bf0fb4f9b9b2039cf3ed2013d_34520/preview_target.webp"},
+  {id:"Adriana_BizTalk_Front_public",name:"Adriana",gender:"Female",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/c3d1baaebbe84752b7a473373c6cd385_42780/preview_target.webp"},
+  {id:"Andrew_public_pro1_20230614",name:"Alex",gender:"Male",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/ed0577c3046545018aade5e35fc6e491_2750/preview_target.webp"},
+  {id:"Annelise_public_2",name:"Annelise",gender:"Female",niche:"luxury",img:"https://files2.heygen.ai/avatar/v3/89af02fefefc4699bae12331bd047373_58430/preview_target.webp"},
+  {id:"Armando_Casual_Front_public",name:"Armando",gender:"Male",niche:"casual",img:"https://files2.heygen.ai/avatar/v3/fa717f667b7b4e41b0d7e4fd320ab080_43280/preview_talk_1.webp"},
+  {id:"Annie_expressive11_public",name:"Annie",gender:"Female",niche:"casual",img:"https://files2.heygen.ai/avatar/v3/561ec5deb3f74a27b6b12fd8a6a2f76e_56970/preview_target.webp"},
+  {id:"Carlotta_BizTalk_Front_public",name:"Carlotta",gender:"Female",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/de842dc5e72d46e19769f266d6592cec_46200/preview_target.webp"},
+  {id:"Aditya_public_4",name:"Aditya",gender:"Male",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/17ad4b824e5a47e8b4f61e6a9cd346e7_62180/preview_target.webp"},
+  {id:"Annelore_public_2",name:"Annelore",gender:"Female",niche:"luxury",img:"https://files2.heygen.ai/avatar/v3/c1d815d3f43246b9bd78f20bd06ba61c_60700/preview_target.webp"},
+  {id:"Bahar_Business_Front_public",name:"Bahar",gender:"Female",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/94b3783586ad4a5bad570b07e81613a4_42880/preview_talk_1.webp"},
+  {id:"Adrian_public_3_20240312",name:"Adrian",gender:"Male",niche:"casual",img:"https://files2.heygen.ai/avatar/v3/696e5afe51ee4794aa232753fa703fea_14947/preview_talk_2.webp"},
+  {id:"Connie_Business_Front_public",name:"Connie",gender:"Female",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/e9410c73299a4e9ead25f48a96ca7851_46270/preview_talk_2.webp"},
+  {id:"Briana_public_2_20240110",name:"Briana",gender:"Female",niche:"luxury",img:"https://files2.heygen.ai/avatar/v3/e50a097f50b541749c318dfedfe9c640_13311/preview_talk_1.webp"},
+  {id:"August_Casual_Front2_public",name:"August",gender:"Male",niche:"casual",img:"https://files2.heygen.ai/avatar/v3/7ee4b62fcfd2497592d0f7f564bad649_42700/preview_talk_1.webp"},
+  {id:"Caroline_Business_Sitting_Front_public",name:"Caroline",gender:"Female",niche:"luxury",img:"https://files2.heygen.ai/avatar/v3/75e4f326918c45028fe06bc9dc0c45da_56520/preview_talk_2.webp"},
+  {id:"Aubrey_standing_night_scene_front",name:"Aubrey",gender:"Female",niche:"casual",img:"https://files2.heygen.ai/avatar/v3/33fda333525e41b4bbff63fe17169507_39530/preview_target.webp"},
+  {id:"Bradley_Blue_Polo_Front",name:"Bradley",gender:"Male",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/c422d0fd8a0645458a084b68e3223a5b_34490/preview_talk_1.webp"},
+  {id:"Chloe_standing_lounge_front",name:"Chloe",gender:"Female",niche:"luxury",img:"https://files2.heygen.ai/avatar/v3/874b8f9546d34bb49a7f536c8efaabdd_38950/preview_talk_2.webp"},
+  {id:"Albert_public_3",name:"Albert",gender:"Male",niche:"casual",img:"https://files2.heygen.ai/avatar/v3/db0a30cd42d640a6b24e693c94c6aac3_62570/preview_target.webp"},
+  {id:"Anja_standing_office_front",name:"Anja",gender:"Female",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/f66130157ead439eb05bcf63b0469163_37110/preview_target.webp"},
+  {id:"Ann_Business_Front_public",name:"Ann",gender:"Female",niche:"professional",img:"https://files2.heygen.ai/avatar/v3/51161fccd84d4c71b686cfe67c34f1b6_48010/preview_target.webp"},
+  {id:"Blanka_sitting_lounge_front",name:"Blanka",gender:"Female",niche:"casual",img:"https://files2.heygen.ai/avatar/v3/51d99b18bdec4ad39b58ca10b9973473_38510/preview_target.webp"},
+  {id:"Bastien_public_3",name:"Bastien",gender:"Male",niche:"luxury",img:"https://files2.heygen.ai/avatar/v3/b82423e99e994597980e86cd5cb1acf2_61190/preview_target.webp"},
+  {id:"upload",name:"Use Your Own Photo",gender:"Upload",niche:"all",img:""}
 ];
 
 let currentLbAvatar = null;
+let currentFilter = 'all';
+
+// Filter avatars by niche
+function filterAvatars(niche, btn) {
+  currentFilter = niche;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderAvatars();
+}
 
 // Render avatar grid
 function renderAvatars() {
   const grid = document.getElementById('avatarGrid');
-  grid.innerHTML = avatars.map(a => {
+  const filtered = currentFilter === 'all' ? avatars : avatars.filter(a => a.niche === currentFilter || a.id === 'upload');
+  grid.innerHTML = filtered.map(a => {
     if (a.id === 'upload') {
       return `<div class="avatar-card upload-card" onclick="document.getElementById('selfieUpload').click();document.getElementById('order').scrollIntoView({behavior:'smooth'})">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
         Use Your Own Photo
       </div>`;
     }
+    const nicheLabel = a.niche.charAt(0).toUpperCase() + a.niche.slice(1);
     return `<div class="avatar-card" onclick="openLightbox('${a.id}')">
       <img src="${a.img}" alt="${a.name}" loading="lazy">
+      <div class="avatar-niche">${nicheLabel}</div>
       <div class="avatar-name">${a.name}</div>
     </div>`;
   }).join('');
