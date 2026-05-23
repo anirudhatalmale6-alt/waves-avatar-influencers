@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waves Avatar Influencers | AI Avatar Videos for Your Brand</title>
+<meta name="description" content="Stop paying thousands for influencer content. Get professional AI avatar videos that sell your products, tell your story, and grow your brand — from just £10.">
+<meta property="og:title" content="Waves Avatar Influencers — Your Brand. AI Talent.">
+<meta property="og:description" content="Professional AI avatar videos for a fraction of influencer costs. 1,200+ avatars. Your script. Your brand.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FFFFFF;--black:#0A0A0A;--grey:#666666;--light-grey:#F5F5F5;
+  --accent:#1a1a1a;--border:#E5E5E5;
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--black);background:var(--white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .3s,box-shadow .3s}
+.nav.scrolled{background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:22px;color:var(--black);text-decoration:none;letter-spacing:-0.5px}
+.nav-logo span{font-style:italic;opacity:.6}
+.nav-cta{background:var(--black);color:var(--white);padding:12px 28px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.3px;transition:transform .2s,opacity .2s}
+.nav-cta:hover{transform:scale(1.03);opacity:.9}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 80px}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;text-align:center}
+.hero-images{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:56px;border-radius:4px;overflow:hidden;max-width:700px;margin-left:auto;margin-right:auto}
+.hero-images img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:grayscale(15%)}
+.hero h1{font-family:var(--serif);font-size:clamp(36px,7vw,68px);line-height:1.05;letter-spacing:-2px;margin-bottom:24px;font-weight:400}
+.hero p{font-size:clamp(16px,2vw,20px);color:var(--grey);max-width:560px;margin:0 auto 40px;line-height:1.7;font-weight:300}
+.btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:18px 40px;border-radius:4px;text-decoration:none;font-size:16px;font-weight:500;letter-spacing:.3px;transition:transform .2s,opacity .2s;border:2px solid var(--black)}
+.btn-primary:hover{transform:translateY(-2px);opacity:.9}
+.btn-outline{background:transparent;color:var(--black);border:2px solid var(--black)}
+.btn-outline:hover{background:var(--black);color:var(--white)}
+
+/* SECTIONS */
+.section{padding:100px 24px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-size:13px;text-transform:uppercase;letter-spacing:3px;color:var(--grey);margin-bottom:16px;font-weight:500}
+.section-title{font-family:var(--serif);font-size:clamp(32px,5vw,52px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;font-weight:400}
+.section-subtitle{font-size:18px;color:var(--grey);max-width:560px;line-height:1.7;font-weight:300}
+.section-center{text-align:center}
+.section-center .section-subtitle{margin:0 auto 48px}
+
+/* PAIN POINT */
+.pain{background:var(--light-grey);text-align:center}
+.pain .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;max-width:800px;margin-left:auto;margin-right:auto}
+.pain .stat{text-align:center}
+.pain .stat-num{font-family:var(--serif);font-size:clamp(36px,5vw,56px);letter-spacing:-2px;line-height:1;margin-bottom:8px}
+.pain .stat-label{font-size:14px;color:var(--grey);font-weight:400}
+
+/* STEP SECTIONS */
+.step-section{display:flex;flex-direction:column;align-items:center}
+.step-visual{width:100%;max-width:700px;margin:0 auto 56px}
+.step-visual img{width:100%;display:block;border-radius:4px}
+.step-content{text-align:center;max-width:600px}
+.step-tag{display:inline-block;font-size:12px;text-transform:uppercase;letter-spacing:3px;color:var(--grey);margin-bottom:20px;font-weight:500;border:1px solid var(--border);padding:6px 16px;border-radius:100px}
+.step-content h2{font-family:var(--serif);font-size:clamp(32px,5vw,48px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;font-weight:400}
+.step-content .highlight{font-weight:700;font-family:var(--sans);font-size:clamp(20px,3vw,28px);line-height:1.3;margin-bottom:16px}
+.step-features{list-style:none;margin:24px 0 40px;padding:0}
+.step-features li{font-size:16px;color:var(--grey);margin-bottom:8px;font-weight:300}
+
+/* AVATAR GALLERY */
+.avatar-section{background:var(--light-grey)}
+.avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:48px}
+.avatar-card{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;background:#e0e0e0;transition:transform .3s,box-shadow .3s}
+.avatar-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.avatar-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.avatar-card:hover img{transform:scale(1.05)}
+.avatar-card .avatar-name{position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:white;font-size:12px;font-weight:500;opacity:0;transition:opacity .3s}
+.avatar-card:hover .avatar-name{opacity:1}
+.avatar-note{text-align:center;margin-top:32px;font-size:15px;color:var(--grey);font-weight:300}
+.avatar-note strong{font-weight:600;color:var(--black)}
+
+/* HOW IT WORKS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:56px}
+.process-step{text-align:center}
+.process-num{font-family:var(--serif);font-size:64px;color:var(--border);line-height:1;margin-bottom:16px;letter-spacing:-3px}
+.process-step h3{font-size:18px;font-weight:600;margin-bottom:8px;letter-spacing:-0.3px}
+.process-step p{font-size:14px;color:var(--grey);line-height:1.6;font-weight:300}
+
+/* SHOWCASE */
+.showcase{background:var(--black);color:var(--white);text-align:center}
+.showcase .section-subtitle{color:rgba(255,255,255,0.5)}
+.showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:56px;border-radius:4px;overflow:hidden;max-width:800px;margin-left:auto;margin-right:auto}
+.showcase-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.showcase-tagline{margin-top:56px;font-family:var(--serif);font-size:clamp(24px,4vw,36px);letter-spacing:-1px;line-height:1.3;font-weight:400}
+.showcase-tagline span{font-style:italic;opacity:.6}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.price-card{border:1px solid var(--border);border-radius:12px;padding:40px 32px;text-align:center;position:relative;transition:transform .3s,box-shadow .3s}
+.price-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+.price-card.featured{border-color:var(--black);background:var(--black);color:var(--white)}
+.price-card.featured .price-label{color:rgba(255,255,255,0.5)}
+.price-card.featured .price-features li{color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.1)}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--black);color:var(--white);font-size:11px;text-transform:uppercase;letter-spacing:2px;padding:6px 20px;border-radius:100px;font-weight:600;white-space:nowrap}
+.price-card.featured .price-badge{background:var(--white);color:var(--black)}
+.price-amount{font-family:var(--serif);font-size:48px;letter-spacing:-2px;margin:16px 0 4px}
+.price-label{font-size:14px;color:var(--grey);margin-bottom:24px}
+.price-features{list-style:none;padding:0;margin:0 0 32px}
+.price-features li{font-size:14px;padding:10px 0;border-bottom:1px solid var(--border);font-weight:300}
+.price-features li:last-child{border:none}
+.price-card .btn-primary{width:100%;text-align:center;padding:16px 32px;font-size:14px}
+.price-card.featured .btn-primary{background:var(--white);color:var(--black);border-color:var(--white)}
+
+/* BUNDLE */
+.bundle-bar{margin-top:32px;background:var(--light-grey);border-radius:12px;padding:32px;text-align:center}
+.bundle-bar h3{font-family:var(--serif);font-size:28px;letter-spacing:-1px;margin-bottom:8px}
+.bundle-bar p{color:var(--grey);font-size:15px;font-weight:300}
+.bundle-bar .save{color:var(--black);font-weight:600}
+
+/* ORDER FORM */
+.order-section{background:var(--light-grey)}
+.order-form{max-width:640px;margin:0 auto;background:var(--white);border-radius:16px;padding:48px;box-shadow:0 4px 24px rgba(0,0,0,0.05)}
+.form-group{margin-bottom:28px}
+.form-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;letter-spacing:0.3px}
+.form-group .form-hint{font-size:13px;color:var(--grey);margin-bottom:8px;font-weight:300}
+.form-group select,.form-group input,.form-group textarea{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:var(--sans);transition:border-color .2s;background:var(--white);color:var(--black)}
+.form-group select:focus,.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--black)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* Selected Avatar Display */
+.selected-avatar-display{display:none;align-items:center;gap:16px;padding:16px;background:var(--light-grey);border-radius:12px;margin-bottom:24px}
+.selected-avatar-display.active{display:flex}
+.selected-avatar-display img{width:80px;height:80px;border-radius:8px;object-fit:cover}
+.selected-avatar-display .info{flex:1}
+.selected-avatar-display .info h4{font-size:15px;margin-bottom:2px}
+.selected-avatar-display .info p{font-size:13px;color:var(--grey)}
+.selected-avatar-display .change-btn{font-size:13px;color:var(--grey);cursor:pointer;text-decoration:underline}
+
+/* Emotion selector */
+.emotion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.emotion-opt{padding:12px;border:1px solid var(--border);border-radius:8px;text-align:center;cursor:pointer;font-size:14px;transition:all .2s;font-weight:400}
+.emotion-opt:hover{border-color:var(--black)}
+.emotion-opt.active{background:var(--black);color:var(--white);border-color:var(--black)}
+.emotion-opt .emoji{font-size:20px;display:block;margin-bottom:4px}
+
+/* Order total */
+.order-total{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:2px solid var(--black);margin-top:8px}
+.order-total .label{font-size:16px;font-weight:600}
+.order-total .amount{font-family:var(--serif);font-size:32px;letter-spacing:-1px}
+
+/* FAQ */
+.faq-list{max-width:640px;margin:48px auto 0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:24px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:500}
+.faq-q::after{content:'+';font-size:24px;font-weight:300;transition:transform .3s;color:var(--grey)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:24px}
+.faq-a p{font-size:15px;color:var(--grey);line-height:1.7;font-weight:300}
+
+/* FOOTER */
+.footer{background:var(--light-grey);padding:60px 24px;text-align:center}
+.footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:24px;flex-wrap:wrap}
+.footer-links a{font-size:14px;color:var(--grey);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--black)}
+.footer-copy{font-size:13px;color:var(--grey);font-weight:300}
+.footer-logo{font-family:var(--serif);font-size:18px;margin-bottom:24px;letter-spacing:-0.5px}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-images{max-width:100%;gap:2px}
+  .hero h1{letter-spacing:-1px}
+  .pain .stat-grid{grid-template-columns:1fr;gap:24px}
+  .avatar-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .process-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .pricing-grid{grid-template-columns:1fr;gap:16px;max-width:400px;margin-left:auto;margin-right:auto}
+  .showcase-grid{max-width:100%}
+  .order-form{padding:32px 24px}
+  .form-row{grid-template-columns:1fr}
+  .emotion-grid{grid-template-columns:repeat(2,1fr)}
+  .section{padding:72px 24px}
+  .nav-logo{font-size:18px}
+  .nav-cta{padding:10px 20px;font-size:13px}
+}
+@media(max-width:480px){
+  .avatar-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:1fr}
+}
+
+/* Lightbox */
+.lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:200;display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s}
+.lb-overlay.active{display:flex;opacity:1}
+.lb-content{background:var(--white);border-radius:16px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.lb-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--light-grey);border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s}
+.lb-close:hover{background:var(--border)}
+.lb-avatar-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:16px 16px 0 0}
+.lb-info{padding:24px}
+.lb-info h3{font-family:var(--serif);font-size:28px;letter-spacing:-1px;margin-bottom:8px}
+.lb-info p{font-size:14px;color:var(--grey);margin-bottom:20px;font-weight:300}
+.lb-select-btn{width:100%;padding:16px;background:var(--black);color:var(--white);border:none;border-radius:8px;font-size:15px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:opacity .2s}
+.lb-select-btn:hover{opacity:.9}
+
+/* Back to top */
+.btt{position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:var(--black);color:var(--white);border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:90}
+.btt.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Waves <span>Avatar</span></a>
+    <a href="#order" class="nav-cta">Order Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-images reveal">
+      <img src="https://files2.heygen.ai/avatar/v3/96a3bee923cd4d518963b1782ee18df3_44380/preview_talk_1.webp" alt="AI Avatar" loading="eager">
+      <img src="https://files2.heygen.ai/avatar/v3/66a0acd4479e467b8d8f31eaadb9aa35_44820/preview_target.webp" alt="AI Avatar" loading="eager">
+    </div>
+    <h1 class="reveal">Your Brand.<br>AI Influencers.</h1>
+    <p class="reveal">Stop paying thousands for influencer content. Professional AI avatar videos that sell your products, tell your story, and grow your brand.</p>
+    <a href="#order" class="btn-primary reveal">Order Your Video &mdash; from &pound;10</a>
+  </div>
+</section>
+
+<!-- PAIN POINT -->
+<section class="section pain">
+  <div class="section-inner section-center reveal">
+    <p class="section-label">The problem</p>
+    <h2 class="section-title">Influencers are expensive.<br>AI avatars aren't.</h2>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num">&pound;500+</div>
+        <div class="stat-label">Average influencer post</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">&pound;20</div>
+        <div class="stat-label">Your AI avatar video</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2hrs</div>
+        <div class="stat-label">Delivery time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP ONE: CHOOSE YOUR AVATAR -->
+<section class="section" id="avatars">
+  <div class="section-inner step-section reveal">
+    <div class="step-content">
+      <span class="step-tag">Step One</span>
+      <h2>Choose Your Avatar.</h2>
+      <p class="highlight">1,200+ hyper-real AI presenters.</p>
+      <ul class="step-features">
+        <li>Every ethnicity. Every age.</li>
+        <li>Natural expressions and gestures.</li>
+        <li>Professional lip-sync in 40+ languages.</li>
+        <li>Studio, office, outdoor, and custom backgrounds.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AVATAR GALLERY -->
+<section class="section avatar-section" id="gallery">
+  <div class="section-inner">
+    <div class="section-center reveal">
+      <p class="section-label">Browse avatars</p>
+      <h2 class="section-title">Pick your presenter.</h2>
+      <p class="section-subtitle">Click any avatar to preview. Then select it for your order.</p>
+    </div>
+    <div class="avatar-grid reveal" id="avatarGrid">
+      <!-- Populated by JS -->
+    </div>
+    <p class="avatar-note reveal"><strong>1,200+ avatars</strong> available. Showing a curated selection. Need a specific look? Tell us in your brief.</p>
+  </div>
+</section>
+
+<!-- STEP TWO: WRITE YOUR BRIEF -->
+<section class="section">
+  <div class="section-inner step-section reveal">
+    <div class="step-content">
+      <span class="step-tag">Step Two</span>
+      <h2>Write Your Brief.</h2>
+      <p class="highlight">Tell us what to say. We handle the rest.</p>
+      <ul class="step-features">
+        <li>Write your script or let us write it for you.</li>
+        <li>Choose the emotion &mdash; friendly, excited, serious, warm.</li>
+        <li>Pick your format &mdash; TikTok, Reels, YouTube, or website.</li>
+        <li>Add your brand colours and logo.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="section showcase">
+  <div class="section-inner section-center reveal">
+    <p class="section-label" style="color:rgba(255,255,255,0.4)">The result</p>
+    <h2 class="section-title" style="color:var(--white)">Your avatar is built.<br>Now make it sell.</h2>
+    <p class="section-subtitle">One avatar. Unlimited content. Campaign ready.</p>
+    <div class="showcase-grid">
+      <img src="https://files2.heygen.ai/avatar/v3/682a899bf7664a45a6bd71236f970385_44360/preview_talk_3.webp" alt="Campaign example">
+      <img src="https://files2.heygen.ai/avatar/v3/5e3416381f2345569991010c35d5c8cb_45820/preview_target.webp" alt="Campaign example">
+    </div>
+    <p class="showcase-tagline">One identity. Multiple videos.<br><span>Campaign ready.</span></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-inner section-center reveal">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Four steps. That's it.</h2>
+    <p class="section-subtitle">From brief to final video in under 24 hours.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3>Choose</h3>
+        <p>Pick your avatar from our gallery of 1,200+ AI presenters.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3>Brief</h3>
+        <p>Write your script, choose the emotion, pick the background.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3>Preview</h3>
+        <p>Receive a watermarked preview. One free revision included.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <h3>Download</h3>
+        <p>Approve and get your full HD video ready to post anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing" style="background:var(--light-grey)">
+  <div class="section-inner section-center reveal">
+    <p class="section-label">Simple pricing</p>
+    <h2 class="section-title">No subscriptions. No hidden fees.</h2>
+    <p class="section-subtitle">Pay per video. Get exactly what you need.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-amount">&pound;10</div>
+        <div class="price-label">Quick Video</div>
+        <ul class="price-features">
+          <li>Up to 10 seconds</li>
+          <li>Any avatar</li>
+          <li>Any background</li>
+          <li>1 free revision</li>
+          <li>HD quality</li>
+        </ul>
+        <a href="#order" class="btn-primary btn-outline" onclick="selectPlan('quick')">Order Quick Video</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-amount">&pound;20</div>
+        <div class="price-label">Standard Video</div>
+        <ul class="price-features">
+          <li>Up to 60 seconds</li>
+          <li>Any avatar</li>
+          <li>Custom background</li>
+          <li>1 free revision</li>
+          <li>Full HD quality</li>
+        </ul>
+        <a href="#order" class="btn-primary" onclick="selectPlan('standard')">Order Standard Video</a>
+      </div>
+      <div class="price-card">
+        <div class="price-amount">&pound;3</div>
+        <div class="price-label">Extra Revision</div>
+        <ul class="price-features">
+          <li>Script changes</li>
+          <li>Emotion adjustments</li>
+          <li>Background swap</li>
+          <li>Voice change</li>
+          <li>Fast turnaround</li>
+        </ul>
+        <a href="#order" class="btn-primary btn-outline" onclick="selectPlan('revision')">Add Revision</a>
+      </div>
+    </div>
+    <div class="bundle-bar">
+      <h3>Bundle &amp; Save</h3>
+      <p>Order <strong>5 standard videos</strong> for <span class="save">&pound;80</span> (save &pound;20) &mdash; <a href="#order" onclick="selectPlan('bundle')" style="color:var(--black);font-weight:600">Order bundle</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="section order-section" id="order">
+  <div class="section-inner section-center">
+    <p class="section-label reveal">Place your order</p>
+    <h2 class="section-title reveal">Let's build your video.</h2>
+    <p class="section-subtitle reveal" style="margin-bottom:48px">Fill in the details below. We'll create your avatar video and send you a watermarked preview within 24 hours.</p>
+
+    <form class="order-form reveal" id="orderForm" onsubmit="handleOrder(event)">
+
+      <!-- Selected avatar -->
+      <div class="selected-avatar-display" id="selectedAvatarDisplay">
+        <img id="selectedAvatarImg" src="" alt="">
+        <div class="info">
+          <h4 id="selectedAvatarName">-</h4>
+          <p>Your selected avatar</p>
+        </div>
+        <span class="change-btn" onclick="scrollToGallery()">Change</span>
+      </div>
+      <input type="hidden" id="selectedAvatarId" name="avatar_id" value="">
+      <input type="hidden" id="selectedAvatarNameInput" name="avatar_name" value="">
+
+      <div class="form-group" id="avatarPickPrompt">
+        <label>Your Avatar</label>
+        <p class="form-hint">Scroll up to the gallery to pick your avatar, or describe the type of presenter you'd like.</p>
+        <input type="text" id="avatarDesc" name="avatar_description" placeholder="e.g. Professional woman in her 30s, dark hair, studio background">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Video Type</label>
+          <select name="video_type" id="videoType" onchange="updateTotal()">
+            <option value="standard">Standard Video (up to 60s) — £20</option>
+            <option value="quick">Quick Video (up to 10s) — £10</option>
+            <option value="bundle">5 Video Bundle — £80</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Video Format</label>
+          <select name="format">
+            <option value="portrait">Portrait 9:16 (TikTok/Reels)</option>
+            <option value="landscape">Landscape 16:9 (YouTube)</option>
+            <option value="square">Square 1:1 (Instagram)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Your Script</label>
+        <p class="form-hint">Write what your avatar should say. Max 3,000 characters. Need help? Just describe your product and we'll write the script for you.</p>
+        <textarea name="script" id="scriptInput" placeholder="e.g. Hi there! Welcome to our store. Today I want to show you our latest collection..." maxlength="3000"></textarea>
+        <div style="text-align:right;font-size:12px;color:var(--grey);margin-top:4px"><span id="charCount">0</span>/3,000</div>
+      </div>
+
+      <div class="form-group">
+        <label>Emotion</label>
+        <div class="emotion-grid">
+          <div class="emotion-opt active" data-emotion="friendly" onclick="selectEmotion(this)">
+            <span class="emoji">😊</span> Friendly
+          </div>
+          <div class="emotion-opt" data-emotion="excited" onclick="selectEmotion(this)">
+            <span class="emoji">🤩</span> Excited
+          </div>
+          <div class="emotion-opt" data-emotion="serious" onclick="selectEmotion(this)">
+            <span class="emoji">😐</span> Serious
+          </div>
+          <div class="emotion-opt" data-emotion="warm" onclick="selectEmotion(this)">
+            <span class="emoji">🥰</span> Warm
+          </div>
+        </div>
+        <input type="hidden" name="emotion" id="emotionInput" value="friendly">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Background</label>
+          <select name="background">
+            <option value="studio">Studio (Clean white/grey)</option>
+            <option value="office">Office (Professional)</option>
+            <option value="outdoor">Outdoor (Natural)</option>
+            <option value="luxury">Luxury (High-end)</option>
+            <option value="custom">Custom (Describe below)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Voice Accent</label>
+          <select name="voice">
+            <option value="british">British English</option>
+            <option value="american">American English</option>
+            <option value="british-asian">British-Asian</option>
+            <option value="indian">Indian English</option>
+            <option value="australian">Australian</option>
+            <option value="irish">Irish</option>
+            <option value="arabic">Arabic</option>
+            <option value="other">Other (specify in notes)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Additional Notes (optional)</label>
+        <textarea name="notes" rows="3" placeholder="Any specific requirements — brand colours, logo placement, custom background description, etc."></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="customer_name" required placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" name="customer_email" required placeholder="email@example.com">
+        </div>
+      </div>
+
+      <div class="order-total">
+        <span class="label">Total</span>
+        <span class="amount" id="orderTotal">&pound;20</span>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width:100%;text-align:center;border:none;cursor:pointer;font-family:var(--sans);margin-top:16px;font-size:16px;padding:20px">
+        Pay &amp; Place Order
+      </button>
+      <p style="text-align:center;font-size:13px;color:var(--grey);margin-top:12px;font-weight:300">Secure payment via Stripe. You'll receive a watermarked preview within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-inner section-center reveal">
+    <p class="section-label">Questions</p>
+    <h2 class="section-title">Everything you need to know.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does delivery take?</div>
+        <div class="faq-a"><p>Most videos are delivered within 2-24 hours. Rush delivery is available for an extra fee.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I choose any avatar?</div>
+        <div class="faq-a"><p>Yes! We have over 1,200 AI avatars available. Browse our gallery above or describe the type of presenter you'd like and we'll find the perfect match.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if I don't like the result?</div>
+        <div class="faq-a"><p>Every order includes one free revision. You'll receive a watermarked preview first. If you need changes, we'll adjust the script, emotion, or background at no extra cost. Additional revisions are just £3 each.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long can the video be?</div>
+        <div class="faq-a"><p>Quick Videos are up to 10 seconds. Standard Videos are up to 60 seconds. Need something longer? Contact us for a custom quote.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I use the same avatar for multiple videos?</div>
+        <div class="faq-a"><p>Absolutely. Many of our clients use the same avatar across their entire campaign. This builds brand recognition just like using a real influencer, but at a fraction of the cost.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you write the script for me?</div>
+        <div class="faq-a"><p>Yes! If you're not sure what to say, just describe your product or service and we'll write a professional script for you. Included in the price.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I add my logo or branding?</div>
+        <div class="faq-a"><p>Yes. Mention it in the notes section and we'll add your logo, brand colours, or any overlay text to the video.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What languages are available?</div>
+        <div class="faq-a"><p>Our avatars can speak in 40+ languages with natural lip-sync. Just specify the language in your brief.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Waves <span style="font-style:italic;opacity:.6">Avatar Influencers</span></div>
+  <div class="footer-links">
+    <a href="#gallery">Avatars</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#order">Order</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Waves Avatar Influencers. All rights reserved.</p>
+</footer>
+
+<!-- Back to top -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+
+<!-- Avatar Lightbox -->
+<div class="lb-overlay" id="avatarLightbox">
+  <div class="lb-content">
+    <button class="lb-close" onclick="closeLightbox()">&times;</button>
+    <img class="lb-avatar-img" id="lbImg" src="" alt="">
+    <div class="lb-info">
+      <h3 id="lbName"></h3>
+      <p id="lbGender"></p>
+      <button class="lb-select-btn" onclick="selectAvatar()">Select This Avatar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Avatar data
+const avatars = [
+  {id:"Adriana_BizTalk_Front_public",name:"Adriana",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/c3d1baaebbe84752b7a473373c6cd385_42780/preview_target.webp"},
+  {id:"Annie_expressive10_public",name:"Annie",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/b76b3d8f146c4a0ab7b2b865d87eb801_55500/preview_target.webp"},
+  {id:"Aditya_public_4",name:"Aditya",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/17ad4b824e5a47e8b4f61e6a9cd346e7_62180/preview_target.webp"},
+  {id:"Anja_standing_office_front",name:"Anja",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/f66130157ead439eb05bcf63b0469163_37110/preview_target.webp"},
+  {id:"Adrian_public_3_20240312",name:"Adrian",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/696e5afe51ee4794aa232753fa703fea_14947/preview_talk_2.webp"},
+  {id:"Abigail_expressive_2024112501",name:"Abigail",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/1ad51ab9fee24ae88af067206e14a1d8_44250/preview_target.webp"},
+  {id:"Amanda_in_Blue_Shirt_Front",name:"Amanda",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/74982c18df0f43fbbf304133b49b2170_35020/preview_target.webp"},
+  {id:"Andrew_public_pro1_20230614",name:"Alex",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/ed0577c3046545018aade5e35fc6e491_2750/preview_target.webp"},
+  {id:"Aiko_public",name:"Aiko",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/1cc18796d5e44342b3247c1aa847bc8f_52250/preview_target.webp"},
+  {id:"Albert_public_3",name:"Albert",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/db0a30cd42d640a6b24e693c94c6aac3_62570/preview_target.webp"},
+  {id:"Anna_public_20240108",name:"Anna",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/3c427d8c81414355b04c2b25a1e7873a_13216/preview_target.webp"},
+  {id:"Armando_Casual_Front_public",name:"Armando",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/fa717f667b7b4e41b0d7e4fd320ab080_43280/preview_talk_1.webp"},
+  {id:"Amelia_sitting_business_training_front",name:"Amelia",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/0233ba6aea01411ab07ddafbf97886f2_39260/preview_talk_2.webp"},
+  {id:"Bahar_expressive_2024112501",name:"Bahar",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/2808dbe6335043d5b5d5215cc97c4d78_44540/preview_talk_2.webp"},
+  {id:"Artur_standing_office_front",name:"Artur",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/ea847ee0ca44468fb6119d16396bf8f1_37890/preview_target.webp"},
+  {id:"Ann_Business_Front_public",name:"Ann",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51161fccd84d4c71b686cfe67c34f1b6_48010/preview_target.webp"},
+  {id:"Bastien_public_3",name:"Bastien",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/b82423e99e994597980e86cd5cb1acf2_61190/preview_target.webp"},
+  {id:"Annelise_public_2",name:"Annelise",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/89af02fefefc4699bae12331bd047373_58430/preview_target.webp"},
+  {id:"Bojan_sitting_businesstraining_front",name:"Bojan",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/391d7595784140d0b627958c1c93aff1_39290/preview_talk_2.webp"},
+  {id:"Blanka_sitting_lounge_front",name:"Blanka",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51d99b18bdec4ad39b58ca10b9973473_38510/preview_target.webp"},
+  {id:"Aubrey_sitting_sofa_side",name:"Aubrey",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/cabc74337c474348ab080ca75d55111b_39680/preview_target.webp"},
+  {id:"Bradley_Blue_Polo_Front",name:"Bradley",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/c422d0fd8a0645458a084b68e3223a5b_34490/preview_talk_1.webp"},
+  {id:"Annelore_public_2",name:"Annelore",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/c1d815d3f43246b9bd78f20bd06ba61c_60700/preview_target.webp"},
+  {id:"August_Casual_Front2_public",name:"August",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/7ee4b62fcfd2497592d0f7f564bad649_42700/preview_talk_1.webp"}
+];
+
+let currentLbAvatar = null;
+
+// Render avatar grid
+function renderAvatars() {
+  const grid = document.getElementById('avatarGrid');
+  grid.innerHTML = avatars.map(a => `
+    <div class="avatar-card" onclick="openLightbox('${a.id}')">
+      <img src="${a.img}" alt="${a.name}" loading="lazy">
+      <div class="avatar-name">${a.name}</div>
+    </div>
+  `).join('');
+}
+
+// Lightbox
+function openLightbox(id) {
+  const a = avatars.find(x => x.id === id);
+  if (!a) return;
+  currentLbAvatar = a;
+  document.getElementById('lbImg').src = a.img;
+  document.getElementById('lbName').textContent = a.name;
+  document.getElementById('lbGender').textContent = a.gender + ' presenter';
+  document.getElementById('avatarLightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('avatarLightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function selectAvatar() {
+  if (!currentLbAvatar) return;
+  document.getElementById('selectedAvatarId').value = currentLbAvatar.id;
+  document.getElementById('selectedAvatarNameInput').value = currentLbAvatar.name;
+  document.getElementById('selectedAvatarImg').src = currentLbAvatar.img;
+  document.getElementById('selectedAvatarName').textContent = currentLbAvatar.name;
+  document.getElementById('selectedAvatarDisplay').classList.add('active');
+  document.getElementById('avatarPickPrompt').style.display = 'none';
+  closeLightbox();
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+function scrollToGallery() {
+  document.getElementById('gallery').scrollIntoView({behavior:'smooth'});
+}
+
+// Lightbox close on overlay click
+document.getElementById('avatarLightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+
+// Emotion selector
+function selectEmotion(el) {
+  document.querySelectorAll('.emotion-opt').forEach(e => e.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('emotionInput').value = el.dataset.emotion;
+}
+
+// Plan selection from pricing cards
+function selectPlan(plan) {
+  const sel = document.getElementById('videoType');
+  if (plan === 'quick') sel.value = 'quick';
+  else if (plan === 'bundle') sel.value = 'bundle';
+  else sel.value = 'standard';
+  updateTotal();
+}
+
+// Update total
+function updateTotal() {
+  const type = document.getElementById('videoType').value;
+  let total = 20;
+  if (type === 'quick') total = 10;
+  else if (type === 'bundle') total = 80;
+  document.getElementById('orderTotal').innerHTML = '&pound;' + total;
+}
+
+// Char counter
+document.getElementById('scriptInput').addEventListener('input', function() {
+  document.getElementById('charCount').textContent = this.value.length;
+});
+
+// FAQ toggle
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+// Scroll effects
+const nav = document.getElementById('nav');
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+  btt.classList.toggle('visible', window.scrollY > 600);
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Handle order submission
+function handleOrder(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const type = data.get('video_type');
+  let amount = 2000;
+  let desc = 'Standard Avatar Video (up to 60s)';
+  if (type === 'quick') { amount = 1000; desc = 'Quick Avatar Video (up to 10s)'; }
+  else if (type === 'bundle') { amount = 8000; desc = '5 Avatar Video Bundle'; }
+
+  // Collect metadata
+  const meta = {
+    avatar_id: data.get('avatar_id') || '',
+    avatar_name: data.get('avatar_name') || data.get('avatar_description') || 'Not specified',
+    script: data.get('script') || 'Script to be written by team',
+    emotion: data.get('emotion'),
+    format: data.get('format'),
+    background: data.get('background'),
+    voice: data.get('voice'),
+    notes: data.get('notes') || '',
+    customer_name: data.get('customer_name'),
+    customer_email: data.get('customer_email')
+  };
+
+  // Create Stripe Checkout
+  fetch('checkout.php', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({amount, description: desc, metadata: meta})
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.url) window.location.href = d.url;
+    else alert('Payment setup failed. Please try again or contact us directly.');
+  })
+  .catch(() => {
+    // Fallback: open email with order details
+    const subject = encodeURIComponent('Avatar Video Order - ' + desc);
+    const body = encodeURIComponent(
+      'Order Details:\n\n' +
+      'Video Type: ' + desc + '\n' +
+      'Avatar: ' + meta.avatar_name + '\n' +
+      'Emotion: ' + meta.emotion + '\n' +
+      'Format: ' + meta.format + '\n' +
+      'Background: ' + meta.background + '\n' +
+      'Voice: ' + meta.voice + '\n' +
+      'Script: ' + meta.script + '\n' +
+      'Notes: ' + meta.notes + '\n\n' +
+      'Customer: ' + meta.customer_name + '\n' +
+      'Email: ' + meta.customer_email
+    );
+    alert('Redirecting to complete your order. We will send you a payment link shortly.');
+    window.location.href = 'https://wa.me/447000000000?text=' + body;
+  });
+}
+
+// Init
+renderAvatars();
+</script>
+</body>
+</html>
