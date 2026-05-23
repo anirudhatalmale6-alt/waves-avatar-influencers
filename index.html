@@ -181,7 +181,7 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
   .pain .stat-grid{grid-template-columns:1fr;gap:24px}
   .avatar-grid{grid-template-columns:repeat(3,1fr);gap:8px}
   .process-grid{grid-template-columns:1fr 1fr;gap:24px}
-  .pricing-grid{grid-template-columns:1fr;gap:16px;max-width:400px;margin-left:auto;margin-right:auto}
+  .pricing-grid{grid-template-columns:1fr 1fr!important;gap:16px;max-width:500px;margin-left:auto;margin-right:auto}
   .showcase-grid{max-width:100%}
   .order-form{padding:32px 24px}
   .form-row{grid-template-columns:1fr}
@@ -211,12 +211,38 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 /* Back to top */
 .btt{position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:var(--black);color:var(--white);border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:90}
 .btt.visible{opacity:1;transform:translateY(0)}
+
+/* SALE BANNER */
+.sale-banner{background:var(--black);color:var(--white);text-align:center;padding:12px 24px;font-size:14px;font-weight:500;letter-spacing:1px;position:relative;z-index:101}
+.sale-banner strong{color:#FF6B6B;font-weight:700}
+.sale-banner a{color:var(--white);text-decoration:underline;margin-left:8px}
+
+/* Sale pricing */
+.price-original{font-size:20px;color:var(--grey);text-decoration:line-through;margin-top:16px;font-family:var(--serif);letter-spacing:-1px}
+.price-card.featured .price-original{color:rgba(255,255,255,0.4)}
+.price-sale-tag{display:inline-block;background:#FF6B6B;color:white;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+
+/* Upload card */
+.avatar-card.upload-card{background:var(--white);border:2px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:var(--grey);font-size:13px;font-weight:500;transition:border-color .3s,color .3s}
+.avatar-card.upload-card:hover{border-color:var(--black);color:var(--black)}
+.avatar-card.upload-card svg{width:32px;height:32px;opacity:.4}
+
+/* File upload */
+.file-upload-area{border:2px dashed var(--border);border-radius:12px;padding:32px;text-align:center;cursor:pointer;transition:border-color .3s,background .3s}
+.file-upload-area:hover{border-color:var(--black);background:rgba(0,0,0,0.02)}
+.file-upload-area p{font-size:14px;color:var(--grey);margin-top:8px}
+.file-upload-area input{display:none}
+.file-upload-preview{margin-top:12px;display:none}
+.file-upload-preview img{width:80px;height:80px;border-radius:8px;object-fit:cover}
 </style>
 </head>
 <body>
 
+<!-- SALE BANNER -->
+<div class="sale-banner">LAUNCH SALE &mdash; <strong>50% OFF</strong> all avatar videos. Limited time only.<a href="#pricing">View Pricing</a></div>
+
 <!-- NAVIGATION -->
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" style="top:42px">
   <div class="nav-inner">
     <a href="#" class="nav-logo">Waves <span>Avatar</span></a>
     <a href="#order" class="nav-cta">Order Now</a>
@@ -232,7 +258,7 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
     </div>
     <h1 class="reveal">Your Brand.<br>AI Influencers.</h1>
     <p class="reveal">Stop paying thousands for influencer content. Professional AI avatar videos that sell your products, tell your story, and grow your brand.</p>
-    <a href="#order" class="btn-primary reveal">Order Your Video &mdash; from &pound;10</a>
+    <a href="#order" class="btn-primary reveal">Order Your Video &mdash; from &pound;5 <span style="text-decoration:line-through;opacity:.5;margin-left:4px">&pound;10</span></a>
   </div>
 </section>
 
@@ -247,8 +273,8 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
         <div class="stat-label">Average influencer post</div>
       </div>
       <div class="stat">
-        <div class="stat-num">&pound;20</div>
-        <div class="stat-label">Your AI avatar video</div>
+        <div class="stat-num">&pound;10</div>
+        <div class="stat-label">Your AI avatar video (50% off)</div>
       </div>
       <div class="stat">
         <div class="stat-num">2hrs</div>
@@ -358,13 +384,15 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
     <p class="section-label">Simple pricing</p>
     <h2 class="section-title">No subscriptions. No hidden fees.</h2>
     <p class="section-subtitle">Pay per video. Get exactly what you need.</p>
-    <div class="pricing-grid">
+    <div class="pricing-grid" style="grid-template-columns:repeat(4,1fr)">
       <div class="price-card">
-        <div class="price-amount">&pound;10</div>
+        <span class="price-sale-tag">50% Off</span>
+        <div class="price-original">&pound;10</div>
+        <div class="price-amount">&pound;5</div>
         <div class="price-label">Quick Video</div>
         <ul class="price-features">
           <li>Up to 10 seconds</li>
-          <li>Any avatar</li>
+          <li>Any avatar or your selfie</li>
           <li>Any background</li>
           <li>1 free revision</li>
           <li>HD quality</li>
@@ -373,11 +401,13 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
       </div>
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
-        <div class="price-amount">&pound;20</div>
+        <span class="price-sale-tag">50% Off</span>
+        <div class="price-original">&pound;20</div>
+        <div class="price-amount">&pound;10</div>
         <div class="price-label">Standard Video</div>
         <ul class="price-features">
           <li>Up to 60 seconds</li>
-          <li>Any avatar</li>
+          <li>Any avatar or your selfie</li>
           <li>Custom background</li>
           <li>1 free revision</li>
           <li>Full HD quality</li>
@@ -385,7 +415,21 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
         <a href="#order" class="btn-primary" onclick="selectPlan('standard')">Order Standard Video</a>
       </div>
       <div class="price-card">
-        <div class="price-amount">&pound;3</div>
+        <span class="price-sale-tag">50% Off</span>
+        <div class="price-original">&pound;40</div>
+        <div class="price-amount">&pound;20</div>
+        <div class="price-label">Premium Video</div>
+        <ul class="price-features">
+          <li>Up to 3 minutes</li>
+          <li>Any avatar or your selfie</li>
+          <li>Custom background</li>
+          <li>2 free revisions</li>
+          <li>Full HD + 4K quality</li>
+        </ul>
+        <a href="#order" class="btn-primary btn-outline" onclick="selectPlan('premium')">Order Premium Video</a>
+      </div>
+      <div class="price-card">
+        <div class="price-amount" style="margin-top:38px">&pound;3</div>
         <div class="price-label">Extra Revision</div>
         <ul class="price-features">
           <li>Script changes</li>
@@ -398,8 +442,8 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
       </div>
     </div>
     <div class="bundle-bar">
-      <h3>Bundle &amp; Save</h3>
-      <p>Order <strong>5 standard videos</strong> for <span class="save">&pound;80</span> (save &pound;20) &mdash; <a href="#order" onclick="selectPlan('bundle')" style="color:var(--black);font-weight:600">Order bundle</a></p>
+      <h3>Bundle &amp; Save Even More</h3>
+      <p>Order <strong>5 standard videos</strong> for <span class="save">&pound;40</span> instead of &pound;50 (save &pound;10) &mdash; <a href="#order" onclick="selectPlan('bundle')" style="color:var(--black);font-weight:600">Order bundle</a></p>
     </div>
   </div>
 </section>
@@ -431,13 +475,29 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
         <input type="text" id="avatarDesc" name="avatar_description" placeholder="e.g. Professional woman in her 30s, dark hair, studio background">
       </div>
 
+      <div class="form-group">
+        <label>Upload Your Own Photo (optional)</label>
+        <p class="form-hint">Want to use your own face or a model you've created? Upload a clear, front-facing selfie or photo.</p>
+        <div class="file-upload-area" onclick="document.getElementById('selfieUpload').click()">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          <p>Click to upload your selfie or model photo</p>
+          <p style="font-size:12px;color:#999">JPG, PNG up to 10MB</p>
+          <input type="file" id="selfieUpload" name="selfie" accept="image/*" onchange="previewSelfie(this)">
+          <div class="file-upload-preview" id="selfiePreview">
+            <img id="selfiePreviewImg" src="" alt="Preview">
+            <p style="font-size:12px;color:var(--grey);margin-top:4px">Photo uploaded</p>
+          </div>
+        </div>
+      </div>
+
       <div class="form-row">
         <div class="form-group">
           <label>Video Type</label>
           <select name="video_type" id="videoType" onchange="updateTotal()">
-            <option value="standard">Standard Video (up to 60s) — £20</option>
-            <option value="quick">Quick Video (up to 10s) — £10</option>
-            <option value="bundle">5 Video Bundle — £80</option>
+            <option value="standard">Standard Video (up to 60s) — £10 (was £20)</option>
+            <option value="quick">Quick Video (up to 10s) — £5 (was £10)</option>
+            <option value="premium">Premium Video (up to 3 min) — £20 (was £40)</option>
+            <option value="bundle">5 Standard Videos — £40 (save £10)</option>
           </select>
         </div>
         <div class="form-group">
@@ -520,7 +580,7 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 
       <div class="order-total">
         <span class="label">Total</span>
-        <span class="amount" id="orderTotal">&pound;20</span>
+        <span class="amount" id="orderTotal">&pound;10</span>
       </div>
 
       <button type="submit" class="btn-primary" style="width:100%;text-align:center;border:none;cursor:pointer;font-family:var(--sans);margin-top:16px;font-size:16px;padding:20px">
@@ -551,7 +611,7 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">How long can the video be?</div>
-        <div class="faq-a"><p>Quick Videos are up to 10 seconds. Standard Videos are up to 60 seconds. Need something longer? Contact us for a custom quote.</p></div>
+        <div class="faq-a"><p>Quick Videos are up to 10 seconds. Standard Videos are up to 60 seconds. Premium Videos can be up to 3 minutes. Need something longer? Contact us for a custom quote.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Can I use the same avatar for multiple videos?</div>
@@ -568,6 +628,14 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What languages are available?</div>
         <div class="faq-a"><p>Our avatars can speak in 40+ languages with natural lip-sync. Just specify the language in your brief.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I use my own face or model?</div>
+        <div class="faq-a"><p>Yes! Upload a clear, front-facing selfie or photo and we'll create an AI avatar that looks like you or your chosen model. Perfect for personal branding and consistent content campaigns.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does the 50% sale last?</div>
+        <div class="faq-a"><p>This is our launch sale to celebrate the opening of Waves Avatar Influencers. Prices will return to normal soon, so grab this deal while you can!</p></div>
       </div>
     </div>
   </div>
@@ -604,30 +672,30 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 <script>
 // Avatar data
 const avatars = [
+  {id:"Candace_Beige_Dress_Front",name:"Candace",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/bb948a1bf0fb4f9b9b2039cf3ed2013d_34520/preview_target.webp"},
   {id:"Adriana_BizTalk_Front_public",name:"Adriana",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/c3d1baaebbe84752b7a473373c6cd385_42780/preview_target.webp"},
-  {id:"Annie_expressive10_public",name:"Annie",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/b76b3d8f146c4a0ab7b2b865d87eb801_55500/preview_target.webp"},
-  {id:"Aditya_public_4",name:"Aditya",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/17ad4b824e5a47e8b4f61e6a9cd346e7_62180/preview_target.webp"},
-  {id:"Anja_standing_office_front",name:"Anja",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/f66130157ead439eb05bcf63b0469163_37110/preview_target.webp"},
-  {id:"Adrian_public_3_20240312",name:"Adrian",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/696e5afe51ee4794aa232753fa703fea_14947/preview_talk_2.webp"},
-  {id:"Abigail_expressive_2024112501",name:"Abigail",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/1ad51ab9fee24ae88af067206e14a1d8_44250/preview_target.webp"},
-  {id:"Amanda_in_Blue_Shirt_Front",name:"Amanda",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/74982c18df0f43fbbf304133b49b2170_35020/preview_target.webp"},
   {id:"Andrew_public_pro1_20230614",name:"Alex",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/ed0577c3046545018aade5e35fc6e491_2750/preview_target.webp"},
-  {id:"Aiko_public",name:"Aiko",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/1cc18796d5e44342b3247c1aa847bc8f_52250/preview_target.webp"},
-  {id:"Albert_public_3",name:"Albert",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/db0a30cd42d640a6b24e693c94c6aac3_62570/preview_target.webp"},
-  {id:"Anna_public_20240108",name:"Anna",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/3c427d8c81414355b04c2b25a1e7873a_13216/preview_target.webp"},
-  {id:"Armando_Casual_Front_public",name:"Armando",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/fa717f667b7b4e41b0d7e4fd320ab080_43280/preview_talk_1.webp"},
-  {id:"Amelia_sitting_business_training_front",name:"Amelia",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/0233ba6aea01411ab07ddafbf97886f2_39260/preview_talk_2.webp"},
-  {id:"Bahar_expressive_2024112501",name:"Bahar",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/2808dbe6335043d5b5d5215cc97c4d78_44540/preview_talk_2.webp"},
-  {id:"Artur_standing_office_front",name:"Artur",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/ea847ee0ca44468fb6119d16396bf8f1_37890/preview_target.webp"},
-  {id:"Ann_Business_Front_public",name:"Ann",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51161fccd84d4c71b686cfe67c34f1b6_48010/preview_target.webp"},
-  {id:"Bastien_public_3",name:"Bastien",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/b82423e99e994597980e86cd5cb1acf2_61190/preview_target.webp"},
   {id:"Annelise_public_2",name:"Annelise",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/89af02fefefc4699bae12331bd047373_58430/preview_target.webp"},
-  {id:"Bojan_sitting_businesstraining_front",name:"Bojan",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/391d7595784140d0b627958c1c93aff1_39290/preview_talk_2.webp"},
-  {id:"Blanka_sitting_lounge_front",name:"Blanka",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51d99b18bdec4ad39b58ca10b9973473_38510/preview_target.webp"},
-  {id:"Aubrey_sitting_sofa_side",name:"Aubrey",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/cabc74337c474348ab080ca75d55111b_39680/preview_target.webp"},
-  {id:"Bradley_Blue_Polo_Front",name:"Bradley",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/c422d0fd8a0645458a084b68e3223a5b_34490/preview_talk_1.webp"},
+  {id:"Armando_Casual_Front_public",name:"Armando",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/fa717f667b7b4e41b0d7e4fd320ab080_43280/preview_talk_1.webp"},
+  {id:"Annie_expressive11_public",name:"Annie",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/561ec5deb3f74a27b6b12fd8a6a2f76e_56970/preview_target.webp"},
+  {id:"Carlotta_BizTalk_Front_public",name:"Carlotta",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/de842dc5e72d46e19769f266d6592cec_46200/preview_target.webp"},
+  {id:"Aditya_public_4",name:"Aditya",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/17ad4b824e5a47e8b4f61e6a9cd346e7_62180/preview_target.webp"},
   {id:"Annelore_public_2",name:"Annelore",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/c1d815d3f43246b9bd78f20bd06ba61c_60700/preview_target.webp"},
-  {id:"August_Casual_Front2_public",name:"August",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/7ee4b62fcfd2497592d0f7f564bad649_42700/preview_talk_1.webp"}
+  {id:"Bahar_Business_Front_public",name:"Bahar",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/94b3783586ad4a5bad570b07e81613a4_42880/preview_talk_1.webp"},
+  {id:"Adrian_public_3_20240312",name:"Adrian",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/696e5afe51ee4794aa232753fa703fea_14947/preview_talk_2.webp"},
+  {id:"Connie_Business_Front_public",name:"Connie",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/e9410c73299a4e9ead25f48a96ca7851_46270/preview_talk_2.webp"},
+  {id:"Briana_public_2_20240110",name:"Briana",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/e50a097f50b541749c318dfedfe9c640_13311/preview_talk_1.webp"},
+  {id:"August_Casual_Front2_public",name:"August",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/7ee4b62fcfd2497592d0f7f564bad649_42700/preview_talk_1.webp"},
+  {id:"Caroline_Business_Sitting_Front_public",name:"Caroline",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/75e4f326918c45028fe06bc9dc0c45da_56520/preview_talk_2.webp"},
+  {id:"Aubrey_standing_night_scene_front",name:"Aubrey",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/33fda333525e41b4bbff63fe17169507_39530/preview_target.webp"},
+  {id:"Bradley_Blue_Polo_Front",name:"Bradley",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/c422d0fd8a0645458a084b68e3223a5b_34490/preview_talk_1.webp"},
+  {id:"Chloe_standing_lounge_front",name:"Chloe",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/874b8f9546d34bb49a7f536c8efaabdd_38950/preview_talk_2.webp"},
+  {id:"Albert_public_3",name:"Albert",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/db0a30cd42d640a6b24e693c94c6aac3_62570/preview_target.webp"},
+  {id:"Anja_standing_office_front",name:"Anja",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/f66130157ead439eb05bcf63b0469163_37110/preview_target.webp"},
+  {id:"Ann_Business_Front_public",name:"Ann",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51161fccd84d4c71b686cfe67c34f1b6_48010/preview_target.webp"},
+  {id:"Blanka_sitting_lounge_front",name:"Blanka",gender:"Female",img:"https://files2.heygen.ai/avatar/v3/51d99b18bdec4ad39b58ca10b9973473_38510/preview_target.webp"},
+  {id:"Bastien_public_3",name:"Bastien",gender:"Male",img:"https://files2.heygen.ai/avatar/v3/b82423e99e994597980e86cd5cb1acf2_61190/preview_target.webp"},
+  {id:"upload",name:"Use Your Own Photo",gender:"Upload",img:""}
 ];
 
 let currentLbAvatar = null;
@@ -635,12 +703,30 @@ let currentLbAvatar = null;
 // Render avatar grid
 function renderAvatars() {
   const grid = document.getElementById('avatarGrid');
-  grid.innerHTML = avatars.map(a => `
-    <div class="avatar-card" onclick="openLightbox('${a.id}')">
+  grid.innerHTML = avatars.map(a => {
+    if (a.id === 'upload') {
+      return `<div class="avatar-card upload-card" onclick="document.getElementById('selfieUpload').click();document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+        Use Your Own Photo
+      </div>`;
+    }
+    return `<div class="avatar-card" onclick="openLightbox('${a.id}')">
       <img src="${a.img}" alt="${a.name}" loading="lazy">
       <div class="avatar-name">${a.name}</div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
+}
+
+// Selfie preview
+function previewSelfie(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('selfiePreviewImg').src = e.target.result;
+      document.getElementById('selfiePreview').style.display = 'block';
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
 }
 
 // Lightbox
@@ -689,6 +775,7 @@ function selectEmotion(el) {
 function selectPlan(plan) {
   const sel = document.getElementById('videoType');
   if (plan === 'quick') sel.value = 'quick';
+  else if (plan === 'premium') sel.value = 'premium';
   else if (plan === 'bundle') sel.value = 'bundle';
   else sel.value = 'standard';
   updateTotal();
@@ -697,9 +784,10 @@ function selectPlan(plan) {
 // Update total
 function updateTotal() {
   const type = document.getElementById('videoType').value;
-  let total = 20;
-  if (type === 'quick') total = 10;
-  else if (type === 'bundle') total = 80;
+  let total = 10;
+  if (type === 'quick') total = 5;
+  else if (type === 'premium') total = 20;
+  else if (type === 'bundle') total = 40;
   document.getElementById('orderTotal').innerHTML = '&pound;' + total;
 }
 
@@ -717,7 +805,9 @@ function toggleFaq(el) {
 const nav = document.getElementById('nav');
 const btt = document.getElementById('btt');
 window.addEventListener('scroll', function() {
-  nav.classList.toggle('scrolled', window.scrollY > 80);
+  const scrolled = window.scrollY > 80;
+  nav.classList.toggle('scrolled', scrolled);
+  nav.style.top = scrolled ? '0' : '42px';
   btt.classList.toggle('visible', window.scrollY > 600);
 });
 
@@ -733,10 +823,11 @@ function handleOrder(e) {
   const form = e.target;
   const data = new FormData(form);
   const type = data.get('video_type');
-  let amount = 2000;
-  let desc = 'Standard Avatar Video (up to 60s)';
-  if (type === 'quick') { amount = 1000; desc = 'Quick Avatar Video (up to 10s)'; }
-  else if (type === 'bundle') { amount = 8000; desc = '5 Avatar Video Bundle'; }
+  let amount = 1000;
+  let desc = 'Standard Avatar Video (up to 60s) - Launch Sale';
+  if (type === 'quick') { amount = 500; desc = 'Quick Avatar Video (up to 10s) - Launch Sale'; }
+  else if (type === 'premium') { amount = 2000; desc = 'Premium Avatar Video (up to 3 min) - Launch Sale'; }
+  else if (type === 'bundle') { amount = 4000; desc = '5 Standard Avatar Videos Bundle - Launch Sale'; }
 
   // Collect metadata
   const meta = {
