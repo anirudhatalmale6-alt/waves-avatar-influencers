@@ -34,8 +34,9 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 80px}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;text-align:center}
-.hero-images{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:56px;border-radius:4px;overflow:hidden;max-width:700px;margin-left:auto;margin-right:auto}
-.hero-images img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:grayscale(15%)}
+.hero-images{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;margin-bottom:56px;border-radius:8px;overflow:hidden;max-width:900px;margin-left:auto;margin-right:auto}
+.hero-images img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .4s}
+.hero-images img:hover{transform:scale(1.03)}
 .hero h1{font-family:var(--serif);font-size:clamp(36px,7vw,68px);line-height:1.05;letter-spacing:-2px;margin-bottom:24px;font-weight:400}
 .hero p{font-size:clamp(16px,2vw,20px);color:var(--grey);max-width:560px;margin:0 auto 40px;line-height:1.7;font-weight:300}
 .btn-primary{display:inline-block;background:var(--black);color:var(--white);padding:18px 40px;border-radius:4px;text-decoration:none;font-size:16px;font-weight:500;letter-spacing:.3px;transition:transform .2s,opacity .2s;border:2px solid var(--black)}
@@ -111,7 +112,7 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 /* SHOWCASE */
 .showcase{background:var(--black);color:var(--white);text-align:center}
 .showcase .section-subtitle{color:rgba(255,255,255,0.5)}
-.showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:56px;border-radius:4px;overflow:hidden;max-width:800px;margin-left:auto;margin-right:auto}
+.showcase-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;margin-top:56px;border-radius:8px;overflow:hidden;max-width:900px;margin-left:auto;margin-right:auto}
 .showcase-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
 .showcase-tagline{margin-top:56px;font-family:var(--serif);font-size:clamp(24px,4vw,36px);letter-spacing:-1px;line-height:1.3;font-weight:400}
 .showcase-tagline span{font-style:italic;opacity:.6}
@@ -231,13 +232,13 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero-images{max-width:100%;gap:2px}
+  .hero-images{max-width:100%;gap:2px;grid-template-columns:1fr 1fr}
   .hero h1{letter-spacing:-1px}
   .pain .stat-grid{grid-template-columns:1fr;gap:24px}
   .avatar-grid{grid-template-columns:repeat(3,1fr);gap:10px}
   .process-grid{grid-template-columns:1fr 1fr;gap:24px}
   .pricing-grid{grid-template-columns:1fr 1fr!important;gap:16px;max-width:500px;margin-left:auto;margin-right:auto}
-  .showcase-grid{max-width:100%}
+  .showcase-grid{max-width:100%;grid-template-columns:1fr 1fr}
   .order-form{padding:32px 24px}
   .form-row{grid-template-columns:1fr}
   .emotion-grid{grid-template-columns:repeat(2,1fr)}
@@ -315,8 +316,10 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-images reveal">
-      <img src="https://files2.heygen.ai/avatar/v3/7b244fd523ba4135b6a2a8ecaf19b510_56090/preview_target.webp" alt="Annie — Bar Setting" loading="eager">
-      <img src="https://files2.heygen.ai/avatar/v3/26c9a98335d7429da6ed3215d961e080_39190/preview_target.webp" alt="Georgia — Office Setting" loading="eager">
+      <img src="https://files2.heygen.ai/avatar/v3/b56dba4dc8114414bc16d39d7aa051bc_56040/preview_target.webp" alt="Annie — Pink Studio" loading="eager">
+      <img src="https://files2.heygen.ai/avatar/v3/26c9a98335d7429da6ed3215d961e080_39190/preview_target.webp" alt="Georgia — Office" loading="eager">
+      <img src="https://files2.heygen.ai/avatar/v3/babf386c73c541169ba57087cc1c4cd7_38970/preview_talk_4.webp" alt="Gala — Sofa" loading="eager">
+      <img src="https://files2.heygen.ai/avatar/v3/3e9090ab80f24aedbda3edcc5477aa10_45740/preview_talk_2.webp" alt="Marcus — Casual" loading="eager">
     </div>
     <h1 class="reveal">Your Brand.<br>AI Influencers.</h1>
     <p class="reveal">Stop paying thousands for influencer content. Professional AI avatar videos that sell your products, tell your story, and grow your brand.</p>
@@ -429,8 +432,10 @@ body{font-family:var(--sans);color:var(--black);background:var(--white);line-hei
     <h2 class="section-title" style="color:var(--white)">Your avatar is built.<br>Now make it sell.</h2>
     <p class="section-subtitle">One avatar. Unlimited content. Campaign ready.</p>
     <div class="showcase-grid">
-      <img src="https://files2.heygen.ai/avatar/v3/96a78a5d17d04e75adc4b53a89eb3fe4_38970/preview_talk_7.webp" alt="Gala — Business Sofa">
-      <img src="https://files2.heygen.ai/avatar/v3/2b68bcf81edc44fabdc9070e62ca1f82_42780/preview_talk_2.webp" alt="Adriana — Business Setting">
+      <img src="https://files2.heygen.ai/avatar/v3/363e6f1f39b540b4adbfdae8ebda75ae_55960/preview_talk_2.webp" alt="Annie — Lounge">
+      <img src="https://files2.heygen.ai/avatar/v3/ab83416187164ac386f72e7c7288e70b_42780/preview_talk_1.webp" alt="Adriana — Sofa">
+      <img src="https://files2.heygen.ai/avatar/v3/96a78a5d17d04e75adc4b53a89eb3fe4_38970/preview_talk_7.webp" alt="Gala — Business">
+      <img src="https://files2.heygen.ai/avatar/v3/97c26ee40b2d411482b98dfcaa634216_46890/preview_target.webp" alt="August — Cool Sitting">
     </div>
     <p class="showcase-tagline">One identity. Multiple videos.<br><span>Campaign ready.</span></p>
   </div>
